@@ -1,7 +1,12 @@
 {
+  
   "name": "technical-test",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "mandrindra ranarijaona",
+    "email": "herymandrindra@gmail.com"
+  },
   "scripts": {
     "dev": "next dev",
     "worker:dev": "node -r ts-node/register ./src/worker.ts",
