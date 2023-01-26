@@ -1,2 +1,7 @@
-.sidebar.sticky {
+aside.sidebar.sticky {
+
+    position: sticky;
+    top: 120px;
+    z-index: 1;
+    align-self: flex-start;
 }
