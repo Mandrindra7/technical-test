@@ -15,12 +15,12 @@ import './styles.css';
  */
 function ScrollToTopButton() {
   const [showBtn, setShowBtn] = useState(false);
-  const el: any = document.querySelector('body')
+  const el = document.querySelector('body') as HTMLElement
 
   useEffect(() => {
-    el?.addEventListener('scroll', (e: any) => {
-    
-      (e?.target?.scrollTop > 250)  ? setShowBtn(true): setShowBtn(false);
+    el?.addEventListener('scroll', (e) => {
+      const { scrollTop } = e.target as HTMLElement;
+      (scrollTop > 250)  ? setShowBtn(true): setShowBtn(false);
       
     });
   }, []);
