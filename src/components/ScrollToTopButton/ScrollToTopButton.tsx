@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import './styles.css';
 
 /**
@@ -14,9 +14,31 @@ import './styles.css';
  *
  */
 function ScrollToTopButton() {
+  const [showBtn, setShowBtn] = useState(false);
+  const el: any = document.querySelector('body')
+
+  useEffect(() => {
+    el?.addEventListener('scroll', (e: any) => {
+    
+      (e?.target?.scrollTop > 250)  ? setShowBtn(true): setShowBtn(false);
+      
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    el!.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div>
-      <button className="btn right-bottom-btn">Go to Top</button>
+      {showBtn && (
+        <button className="btn right-bottom-btn" onClick={scrollToTop}>
+          Go to Top
+        </button>
+      )}
     </div>
   );
 }
