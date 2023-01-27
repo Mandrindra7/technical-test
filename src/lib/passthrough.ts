@@ -1,4 +1,6 @@
 import { ServerResponse } from 'http';
+import { PassThrough } from 'stream';
+import fs from 'fs'
 
 export default function passthrough(filepath: string, res: ServerResponse): ServerResponse {
   // @todo:
@@ -8,5 +10,26 @@ export default function passthrough(filepath: string, res: ServerResponse): Serv
   //   - X-Metadata: technical-test
   // to see result, check `http://localhost:3000/api/storages/working.json`
 
-  return res.end(`// @todo: implement this function, use \`PassThrough\` stream to show content of ${filepath}, then set additional headers`);
+
+  //Passthrough is a class part of stream module in nodeJs
+  //It pass data through without modifying it
+  //another way to do it is using pipe() or through2 a package :https://www.npmjs.com/package/through2
+  const passthrough = new PassThrough()
+  let result;
+
+  passthrough.write(filepath)
+
+  passthrough.on('data', (chunk) => {
+
+    let rawdata =  fs.readFileSync(`${chunk.toString()}`);
+    result = JSON.parse(rawdata.toString())
+  
+  })
+
+  passthrough.end()
+
+  res.setHeader('Cache-Control','max-age=3600, public')
+  res.setHeader('X-Metadata','technical-test')
+
+  return res.end(`${JSON.stringify(result)}`);
 }
