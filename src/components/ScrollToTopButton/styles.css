@@ -1,2 +1,5 @@
 .right-bottom-btn {
+    position: absolute;
+    right: 490px;
+    bottom: 30px;
 }
