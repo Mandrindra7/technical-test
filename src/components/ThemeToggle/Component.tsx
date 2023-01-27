@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../components/contexts/ThemeContext';
+
 import './styles.css';
 
 export default function Component() {
   const [checked, setChecked] = React.useState(true);
+  const { toggleTheme } = useContext(ThemeContext);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("Oops!, doesn't work, check /challenges/06-switch-theme to solve this issue");
     setChecked(e.target.checked);
   };
 
   return (
     <div className="theme-toggle-container">
-      <input className="theme-toggle" type="checkbox" checked={checked} onChange={handleChange} />
+      <input 
+          className="theme-toggle" 
+          type="checkbox" 
+          checked={checked} 
+          onChange={handleChange} 
+          onClick={toggleTheme} 
+        />
     </div>
   );
 }

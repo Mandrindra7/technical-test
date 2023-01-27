@@ -1,27 +1,29 @@
 'use client';
 
-import { createContext, useContext, PropsWithChildren } from 'react';
+import { createContext, useContext, PropsWithChildren, useState } from 'react';
 
 export declare type ThemeValue = 'dark' | 'light';
 
 export interface ThemeContextValue<T extends string> {
   theme: T;
-}
-
-interface ThemeProviderProps<T> {
-  defaultTheme?: T;
+  toggleTheme?: () => void 
 }
 
 export const ThemeContext = createContext<ThemeContextValue<ThemeValue>>({
-  theme: 'light',
+  theme: 'light'
 });
 
-export const ThemeProvider = ({ children, defaultTheme }: PropsWithChildren<ThemeProviderProps<ThemeValue>>) => {
+export const ThemeProvider = ({ children }: PropsWithChildren<ThemeValue>) => {
+  const [theme, setTheme] = useState<ThemeValue>('light');
+ 
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+  
   return (
     <ThemeContext.Provider
       value={{
-        // @todo: handle this with a state, that can toggle between dark and light
-        theme: defaultTheme || 'light',
+        theme ,
+        toggleTheme
       }}
     >
       {children}
