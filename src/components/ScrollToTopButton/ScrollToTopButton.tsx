@@ -15,18 +15,20 @@ import './styles.css';
  */
 function ScrollToTopButton() {
   const [showBtn, setShowBtn] = useState(false);
-  const el = document.querySelector('body') as HTMLElement
-
+  const [element,setElement] = useState<HTMLElement>()
+  
   useEffect(() => {
+    const el = document.querySelector('body') as HTMLElement
+    setElement(el)
     el?.addEventListener('scroll', (e) => {
-      const { scrollTop } = e.target as HTMLElement;
+      const { scrollTop } = (e.target as HTMLElement);
       (scrollTop > 250)  ? setShowBtn(true): setShowBtn(false);
       
     });
   }, []);
 
   const scrollToTop = () => {
-    el!.scrollTo({
+    element!.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
