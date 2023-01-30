@@ -8,4 +8,181 @@
 
 /* Please continue your works below */
 .preview-card {
+  height: 645px;
+  width: 320px;
+  border-radius: 40px;
+  background: #3A5AC3ff;
+  background: linear-gradient(to bottom,rgb(62,150,235) 0%, rgb(58, 90, 195) 55%,rgb(25,31,44) 55%,rgb(25,31,44) 100%);
 }
+
+.card-body  {
+ margin: 20px; 
+ position: relative;
+ bottom: 160px;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.market{
+  background: linear-gradient(to right, rgb(45,51,70,0.7), rgb(24,31,44,1));
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  box-shadow: 1px 3px 5px 2px rgba(36, 36, 35,0.5);
+}
+
+.point {
+  background: rgb(51,134,201);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+}
+
+.market-icon {
+  margin: 4px;
+}
+
+.ps5 {
+  transform: rotate(270deg);
+  height: 200px;
+  position: relative;
+  bottom: 140px;
+  left: 90px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 0.9rem
+}
+
+.text {
+  font-weight: 400;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+}
+
+.title,
+.text {
+  font-family: var(--main-font);
+  color: white;
+  
+}
+.description {
+  margin-bottom: 15px;
+}
+
+.d-title,
+.d-text {
+  color: rgb(213,225,239);
+  font-family: var(--main-font);
+
+}
+
+.d-title {
+  font-size: 1.9rem;
+  position: relative;
+  top: 15px;
+}
+
+.d-text {
+  margin-top: 20px;
+  font-size: 0.7rem;
+  line-height: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 10px;
+  
+}
+
+.item {
+  display: flex;
+}
+.option {
+  background: linear-gradient(to right, rgb(45,51,70,0.7), rgb(24,31,44,1));
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
+  margin: 7px;
+}
+
+
+.o-title,
+.o-text {
+  color: rgb(213,225,239);
+  font-family: var(--main-font);
+  font-size: 0.8rem;
+}
+
+.o-title {
+  font-weight: 700;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, rgb(45,51,71,0.7), rgb(31,38,53,1));
+  height: 55px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(189, 189, 189, 0.2);
+  padding: 15px;
+  margin-top: 25px;
+}
+
+.p-text {
+  font-family: var(--font-mono);
+  color: rgb(224, 224, 224);
+  font-size: 2rem;
+  letter-spacing: -3px;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  padding-inline: 5px;
+  background: linear-gradient(to right, rgb(96,193,239, 0.8), rgb(74,64,250, 1));
+  border-radius: 5px;
+  height: 35px;
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}
+
+.line {
+  height: 35px;
+  width: 1.5px;
+  margin-inline: 5px;
+  background: rgb(31,38,53,1);
+}
+
+.b-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgb(224, 224, 224);
+  margin-inline: 10px;
+  margin-top: 5px;
+}
+
+.b-back {
+  transform: rotate(180deg);
+  width:20px;
+  
+}
+/*
+*/
